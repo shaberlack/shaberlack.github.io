@@ -24,20 +24,6 @@ This is a [link](https://www.google.com/) to a good data science tool. Here's a 
 
 You can also still use R!
 
-```{r}
-library(tidyverse)
-
-plot_df = 
-  tibble(
-    x = runif(100),
-    y = 1 + 2 * x + rnorm(100)
-  )
-
-plot_df |> 
-  ggplot(aes(x = x, y = y)) +
-  geom_point()
-```
-
 Here's a new section
 
 My cat is ted. Here's ted.
