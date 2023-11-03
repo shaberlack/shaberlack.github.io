@@ -16,50 +16,52 @@ library(plotly)
 library(p8105.datasets)
 ```
 
-Focos on NYC Airbnb data.
+Focus on NYC Restaurant Inspection data in Queens.
 ```{r}
-data("nyc_airbnb")
+data("rest_inspec")
 
-nyc_airbnb =
-  nyc_airbnb |> 
-  mutate(stars = review_scores_location / 2) |> 
-  select(borough = neighbourhood_group, neighbourhood, stars, price, room_type, lat, long) |> 
- drop_na(stars) |> 
-  filter(
-    borough == "Manhattan",
-    room_type == "Entire home/apt",
-    price %in% 100:500
-    )
+rest_inspec_Q = rest_inspec |> 
+janitor::clean_names() |> 
+  filter(boro == "QUEENS", critical_flag == "Critical") |> 
+   separate(inspection_date, into = c("year", "month", "day"), convert = TRUE) |> 
+  select(-camis, -day, -phone, -grade_date, -building, -record_date) |> 
+  mutate(violation_description = case_match(violation_description,
+    "Cold food item held above 41Âº F (smoked fish and reduced oxygen packaged foods above 38 ÂºF) except during necessary preparation." ~ "Not cold enough", 
+    "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred." ~ "Cross-contamination",
+    "Filth flies or food/refuse/sewage-associated (FRSA) flies present in facilitys food and/or non-food areas. Filth flies include house flies, little house flies, blow flies, bottle flies and flesh flies. Food/refuse/sewage-associated flies include fruit flies, drain flies and Phorid flies." ~ "FRSA",
+    "Evidence of mice or live mice present in facility's food and/or non-food areas." ~ "Mice",
+    "Food not protected from potential source of contamination during storage, preparation, transportation, display or service." ~ "Food storage safety",
+    "Hot food item not held at or above 140Âº F." ~ "Not hot enough",
+    "Wiping cloths soiled or not stored in sanitizing solution." ~ "Wiping cloths",
+    "Sanitized equipment or utensil, including in-use food dispensing utensil, improperly used or stored." ~ "Utensil cleanliness")) |> 
+  drop_na(grade, violation_description)
 ```
 
 Let's make a scatterplot!
 
 ```{r}
-nyc_airbnb |> 
-  mutate(text_label = str_c("Price: $", price, "\nRating:", stars)) |> 
-  plot_ly(x = ~lat, y = ~long, color = ~price, text = ~text_label,
+rest_inspec_Q |> 
+  mutate(text_label = str_c("Cuisine Type:", cuisine_description, "\nGrade:", grade)) |> 
+  plot_ly(x = ~score, y = ~zipcode, color = ~score, text = ~text_label,
           type = "scatter", mode = "markers", alpha = 0.5)
 ```
 
 Let's make a box plot!
 
 ```{r}
-nyc_airbnb |>
+rest_inspec_Q |>
   mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
   plot_ly(y = ~price, color = ~neighbourhood, type = "box", colors = "viridis")
 ```
 
 Let's make a bar plot!
 
-How many airbnbs are in each of the neighborhoods we're looking at?
-First, sort the dataframe that's going into plot.ly.
-(I would use a fct_reorder and a colorscheme).
 ```{r}
-nyc_airbnb |> 
-  count(neighbourhood) |> 
-   mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
+rest_inspec_Q |> 
+  count(violation_description) |> 
+   mutate(violation_description = fct_reorder(violation_description, n)) |> 
   plot_ly(
-    x = ~neighbourhood, y = ~n, type = "bar", color = ~neighbourhood, colors = "viridis")
+    x = ~violation_description, y = ~n, type = "bar", color = ~violation_description, colors = "viridis")
 ```
 
 

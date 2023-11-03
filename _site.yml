@@ -5,8 +5,6 @@ navbar:
   right:
     - text: "About me"
       href: about.html
-    - text: "Projects"
-      href: projects.html
     - text: "Dashboard"
     - href: dashboard.html
     - icon: "LinkedIn"
