@@ -1,11 +1,77 @@
 ---
-title: "About this website"
+title: "About me"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-# About
+# Experience
 
-This website is pretty great!
+**Education**
+
+I received my BA in Health and Human Biology at Brown University in 2018. I am now in my second year of pursuing an MPH in Epidemiology with a certificate in Applied Biostatistics and Public Health Data Science at the Columbia Mailman School of Public Health in New York City.
+
+*Selected Coursework*: Data Science I, Design and Conduct of Observational Epidemiology, Clinical Trials Methodology, Analysis of Categorical Data, Applications of Epidemiological Research Methods, Applied Regression
+
+# MEDICAL RESEARCH
+
+*Brigham and Women’s Hospital Brookline, MA | October 2020-September 2022*
+
+**Infectious Disease Clinical Research Assistant I**
+
+* Screened twenty participants per week for inclusion and exclusion criteria, obtained informed consent of research subjects across twelve multi-site AIDS Clinical Trials Group and industry clinical research studies
+
+* Provided primary support and communication for ninety research participants
+
+* Performed specimen and data collection, organized and processed study data using standard practices; reviewed study records to determine whether specific tests, samples, or other data were not collected according to protocol
+
+*Miriam Hospital Immunology Center Providence, RI | June-December 2016*
+
+**Infectious Disease Research Intern**
+
+* Co-authored research paper assessing self-perceived HIV infection risk and barriers to care faced by women in rural Dominican Republic
+
+* Performed thorough literature review and used Stata to analyze and interpret survey data of the 105 women heads of household
+
+* Built REDCap database of patients receiving HIV Post-Exposure Prophylaxis treatment
+
+* Greeted and registered ethnically, culturally, and racially diverse patient population at STI clinic
+
+*Rhode Island Hospital Providence, RI | June-December 2016*
+
+**Research Intern**
+
+* Created survey administered to 300+ Rhode Island pediatricians assessing their self-perceived competence using newborn screening data to diagnose hemoglobinopathies in newborns
+
+* Collaborated with pediatric hematologist/oncologist and newborn screening manager of the RI Department of Health to discuss implications of survey results
+
+# CLINICAL AND PATIENT CARE
+
+*NewYork-Presbyterian Queens Hospital Flushing, NY | July 2018-October 2020*
+
+**Emergency Department Assistant Lead Medical Scribe**
+
+* Created detailed medical charts, tracked patient test results, managed patient EMR data in Allscripts in a Level 1 trauma center
+
+* Assisted 2-3 physicians per rotation in maintaining timeliness and efficiency to provide care to 45+ patients per day
+
+* Trained and completed weekly and 90-day evaluations for incoming medical scribes
+
+# LEADERSHIP & COMMUNITY RELATIONS
+
+*Columbia Mailman School of Public Health, Dept of Epidemiology Washington Heights, NY | August 2023-December 2023*
+
+**Lead TA: Research Methods and Applications: Quantitative Foundations**
+
+* Hold weekly meetings with Studio Faculty, update teaching materials, develop assignments and rubrics with faculty
+
+* Run weekly meetings with team of 25 TAs, schedule and manage office hours, lecture coverage, and session support
+ 
+* Communicate important information to students via email and Canvas, meet with individual students as needed
+
+## SKILLS
+
+**Languages**: Proficient in French, familiar with Korean
+
+**Technical Skills:** RStudio, SAS, Stata, AllScripts, Epic, Microsoft Suite, REDCap

@@ -3,16 +3,16 @@ output_dir: "."
 navbar:
   title: "Home"
   right:
-    - text: "About"
+    - text: "About me"
       href: about.html
     - text: "Projects"
       href: projects.html
-    - text: "Plotly"
-      href: plotly.html
     - text: "Dashboard"
     - href: dashboard.html
+    - icon: "LinkedIn"
+    - href: https://www.linkedin.com/in/sarah-haberlack/
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:<skh2164@cumc.columbia.edu>
     - icon: fa-github fa-lg
       href: http://github.com/shaberlack/
 output:
